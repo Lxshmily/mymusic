@@ -232,6 +232,11 @@
 				}
 			}
 		};
+
+		audio.onended = function() {
+			console.log("play end");
+			$("#play").removeClass("move")
+		}
 		
 		</script>
 
