@@ -94,6 +94,8 @@
 			width: 100%;
 			height: 100%;
 			background: rgba(0, 0, 0, 0.5);
+			background-size: 100% 100%;
+			transition: 2s;
 		}
 
 		.move {
@@ -117,7 +119,7 @@
 	</div>
 	<div class="control-bar">
 		<div class="control">
-			<div id="play" class="btn play">△</div>
+			<div id="play" class="btn play">▶</div>
 		</div>
 	</div>
 	<div class="lrc-box">
@@ -186,7 +188,7 @@
 		var ppxx;//保存ul的translateY值
 		
 		console.log(lrcTime);
-		document.getElementsByClassName("bg")[0].style.cssText = "background: url('static/13279107332014333.jpg') no-repeat;backgroundSize: 100% 100%;filter: blur(3px);"
+		document.getElementsByClassName("bg")[0].style.cssText = "background: url('static/2.jpg') no-repeat center center / 100% 100%;filter: blur(3px);"
 		Oplay.onclick = function() {
 			if($("#play").hasClass("move")) {
 				$("#play").removeClass("move")
@@ -215,6 +217,8 @@
 					$li.get(currentLine).className="on";
 					break;
 				}else{
+					let n = currentLine % 3;
+					document.getElementsByClassName("bg")[0].style.cssText = "background: url('static/"+n+".jpg') no-repeat center center / 100% 100%;filter: blur(3px);"
 					$li.get(currentLine-1).className="";
 					$li.get(currentLine).className="on";
 				}
